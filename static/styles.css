@@ -1,0 +1,26 @@
+.GroupImage{
+  width: 800px; /* 600px */
+  height: 300px; /* 250px */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.AboutUsText{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 52%; /* 40% */
+}
+
+.AboutUsTitle{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%; /* 40% */
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
