@@ -18,5 +18,9 @@ def Om_oss_page():
 def kontakt_page():
     return render_template("kontakt.html")
 
+@app.route("/login")
+def login_page():
+    return render_template("login.html")
+
 if __name__ == "__main__":
     app.run(debug = True)
