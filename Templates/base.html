@@ -23,19 +23,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="home-btn">
-                <a class="nav-link active" aria-current="page" href="/">Hem</a>
+                <a class="nav-link {% block nav_home %}{% endblock %}" href="/">Hem</a>
               </li>
               <li class="services-btn">
-                <a class="nav-link" href="/tjanster">Tjänster</a>
+                <a class="nav-link {% block nav_services %}{% endblock %}" href="/tjanster">Tjänster</a>
               </li>
               <li class="about-btn">
-                <a class="nav-link" href="/omoss">Om Oss</a>
+                <a class="nav-link {% block nav_about %}{% endblock %}" href="/omoss">Om Oss</a>
               </li>
               <li class="contact-btn">
-                <a class="nav-link" href="/kontakt">Kontakta Oss</a>
+                <a class="nav-link {% block nav_contact %}{% endblock %}" href="/kontakt">Kontakta Oss</a>
               </li>
               <li class="login-btn">
-                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link {% block nav_login %}{% endblock %}" href="/login">Login</a>
               </li>
             </ul>
           </div>
