@@ -1,5 +1,8 @@
 /* Base page content */
-
+.login-btn{
+  position: absolute;
+  right: 15px;
+}
 
 /* Home page */
 
@@ -9,7 +12,7 @@
 
 /* About us page */
 .GroupImage{
-  width: 800px; /* 600px for 40% width, aka first image */
+  width: 700px; /* 600px for 40% width, aka first image */
   display: block;
   margin-left: auto;
   margin-right: auto;
