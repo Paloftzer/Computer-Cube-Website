@@ -4,6 +4,20 @@
   right: 15px;
 }
 
+.keepfooteratbottom{
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
+.keepfooteratbottom:after{
+  content: "";
+  display: block;
+}
+
+.footerpls, .keepfooteratbottom:after{
+  height: 50px;
+}
+
 /* Home page */
 
 
