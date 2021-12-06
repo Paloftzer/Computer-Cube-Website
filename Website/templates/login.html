@@ -1,35 +1,24 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% block nav_login %}active{% endblock %}
 
 {% block title %}
-    Register Page
+  Login
 {% endblock %}
 
 {% block content %}
-<body class="text-center">
-    <div class="container">
-        <form method="POST" class="form-register" style="color:white">
-            {{ form.hidden_tag() }}
-            <h1 class="h3 mb-3 font-weight-normal">
-                Please Create Your Account
-            </h1><br>
-            {{ form.username.label() }}
-            {{ form.username(class="form-control", placeholder="Username") }}
+  <body class="text-center">
+    <form method="POST" class="form-login" style="color: white">
+      {{ form.hidden_tag() }}
+      <h1 class="font-weight-normal">
+        Please Login
+      </h1><br>
+      {{ form.username.label() }}
+      {{ form.username(class="form-control", placeholder="Username") }}
 
-            {{ form.email_address.label() }}
-            {{ form.email_address(class="form-control", placeholder="Email Address") }}
-
-            {{ form.password1.label() }}
-            {{ form.password1(class="form-control", placeholder="Password") }}
-
-            {{form.password2.label() }}
-            {{form.password2(class="form-control", placeholder="Confirm Password") }}
-            <br>
-            {{ form.submit(class="btn btn-primary btn-lg btn-block") }}
-            
-        </form>
-    </div>
-</body>
+      {{ form.password.label() }}
+      {{ form.password(class="form-control", placeholder="Password") }}
+      <br>
+      {{ form.submit(class="btn btn-primary btn-lg btn-block") }}
+    </form>
+  </body>
 {% endblock %}
-
-<!--This extends our base.html 
-and then creates text fields needed for a user to create an account-->
