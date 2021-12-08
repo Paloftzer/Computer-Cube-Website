@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block nav_register %}active{% endblock %}
 
+{% block styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
 {% block title %}
     Register Page
 {% endblock %}
@@ -8,7 +12,7 @@
 {% block content %}
 <body class="text-center">
     <div class="container">
-        <form method="POST" class="form-register" style="color:white">
+        <form method="POST" class="form-register">
             {{ form.hidden_tag() }}
             <h1 class="h3 mb-3 font-weight-normal">
                 Please Create Your Account
@@ -25,7 +29,7 @@
             {{ form.password2.label() }}
             {{ form.password2(class="form-control", placeholder="Confirm Password") }}
             <br>
-            {{ form.submit(class="btn btn-primary btn-lg btn-block") }}
+            {{ form.submit(class="btn btn-primary btn-lg btn-block btn-no-border") }}
             
         </form>
     </div>

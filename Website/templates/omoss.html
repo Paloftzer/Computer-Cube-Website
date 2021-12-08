@@ -1,17 +1,21 @@
 {% extends "base.html" %}
 {% block nav_about %}active{% endblock %}
 
+{% block styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
 {% block title %}
   Computer Cube
 {% endblock %}
 
 {% block content %}
   <img class="GroupImage" src="/static/group_photo.jpeg"> <!--Image is currently a placeholder, we need to take a proper group photo-->
-  <h1 class="AboutUsTitle" style="color: white">
+  <h1 class="AboutUsTitle">
     Om oss på Computer Cube
   </h1>
   <div class="ui text container">
-    <p class="AboutUsText" style="color: white">Vi på Computer Cube jobbar för att alla kunder ska känna sig nöjda med deras produkter.<br><br>
+    <p class="AboutUsText">Vi på Computer Cube jobbar för att alla kunder ska känna sig nöjda med deras produkter.<br><br>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum explicabo dolorum maxime, dolores ad suscipit nihil possimus eius! Voluptas culpa veniam modi obcaecati, molestias labore fugiat ducimus fuga? Adipisci tempora debitis porro ducimus aspernatur omnis eveniet, aliquid autem aut odit cum sapiente excepturi ullam earum corrupti, tenetur eius! Maxime nihil at quisquam cumque provident natus, ut quam voluptatum earum culpa voluptatibus, repellendus, eaque dignissimos et consequuntur magni eius praesentium dolore deserunt itaque! Porro, similique nobis distinctio praesentium, pariatur ea maiores reprehenderit reiciendis, accusamus ducimus iusto. Sapiente sequi, repellat quo sunt natus, excepturi ipsam molestias quis suscipit quod reprehenderit similique!
     </p>>
   </div>
