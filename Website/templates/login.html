@@ -7,18 +7,20 @@
 
 {% block content %}
   <body class="text-center">
-    <form method="POST" class="form-login" style="color: white">
-      {{ form.hidden_tag() }}
-      <h1 class="font-weight-normal">
-        Please Login
-      </h1><br>
-      {{ form.username.label() }}
-      {{ form.username(class="form-control", placeholder="Username") }}
-
-      {{ form.password.label() }}
-      {{ form.password(class="form-control", placeholder="Password") }}
-      <br>
-      {{ form.submit(class="btn btn-primary btn-lg btn-block") }}
-    </form>
+    <div class="container">
+      <form method="POST" class="form-login" style="color: white">
+        {{ form.hidden_tag() }}
+        <h1 class="h3 mb-3 font-weight-normal">
+          Please Login
+        </h1><br>
+        {{ form.username.label() }}
+        {{ form.username(class="form-control", placeholder="Username") }}
+        
+        {{ form.password.label() }}
+        {{ form.password(class="form-control", placeholder="Password") }}
+        <br>
+        {{ form.submit(class="btn btn-primary btn-lg btn-block") }}
+      </form>
+    </div>
   </body>
 {% endblock %}

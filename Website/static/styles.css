@@ -4,19 +4,32 @@
   right: 15px;
 }
 
-.keepfooteratbottom{
-  min-height: 100%;
-  margin-bottom: -50px;
+.page-container{
+  position: relative;
+  min-height: 100vh;
 }
 
-.keepfooteratbottom:after{
-  content: "";
-  display: block;
+.main_content-container{
+  padding-bottom: 50px;
 }
 
-.footerpls, .keepfooteratbottom:after{
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   height: 50px;
 }
+
+/* body{
+  min-height: 100%;
+}
+
+footer{
+  clear: both;
+  position: relative;
+  height: 50px;
+  margin-top: -50px;
+} */
 
 /* Home page */
 
