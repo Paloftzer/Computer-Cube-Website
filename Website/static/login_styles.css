@@ -1,31 +1,31 @@
 /* Base layout */
-.register-btn{
+.register-btn {
   position: absolute;
   right: 15px;
 }
 
-.page-container{
+.page-container {
   position: relative;
   min-height: 100vh;
 }
 
-.main_content-container{
-  padding-bottom: 50px;
+.main_content-container {
+  padding-bottom: 60px;
   margin-top: 30px;
 }
 
-footer{
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 50px;
+  height: 60px;
 }
 
-.form-control{
+.form-control {
   border: 0;
 }
 
-.btn-no-border{
+.btn-no-border {
   border: 0;
 }
 
@@ -132,8 +132,7 @@ a {
   text-decoration: none;
 }
 
-a:focus,
-a:hover {
+a:focus, a:hover {
   text-decoration: underline;
 }
 
@@ -211,8 +210,6 @@ input[type="submit"] {
 .login input[type="text"],
 .login input[type="password"],
 .login input[type="submit"] {
-  border-radius: 0.25rem;
-  border-radius: var(--loginBorderRadus);
   padding: 1rem;
 }
 
@@ -221,8 +218,8 @@ input[type="submit"] {
   background-color: var(--loginLabelBackgroundColor);
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
-  padding-left: 1.25rem;
   padding-right: 1.25rem;
+  padding-left: 1.25rem;
 }
 
 .login input[type="password"],
