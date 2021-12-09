@@ -1,8 +1,4 @@
 /* Base layout */
-.register-btn {
-  position: absolute;
-  right: 15px;
-}
 
 .page-container {
   position: relative;
@@ -132,7 +128,7 @@ a {
   text-decoration: none;
 }
 
-a:focus, a:hover {
+.underlineable:focus, .underlineable:hover {
   text-decoration: underline;
 }
 

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "layouts/base.html" %}
 {% block nav_home %}active{% endblock %}
 
 {% block styles %}
@@ -10,5 +10,5 @@
 {% endblock %}
 
 {% block content %}
-  <div class="text-center">Detta är Computer Cube's officiela hemsida!</div>
+  <div class="text-center">Hej {% if not (current_user.is_authenticated) %} och välkommen till Computer Cube's officiella hemsida! {% else %} {{ current_user.username }}, och välkommen till Computer Cube's officiella hemsida! {% endif %}</div>
 {% endblock %}

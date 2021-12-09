@@ -1,7 +1,7 @@
-{% extends "base.html" %}
+{% extends "layouts/base.html" %}
 {% block nav_login %}active{% endblock %}
 
-{% block styles %}
+{% block custom_head_tags %}
   <link rel="stylesheet" href="{{ url_for('static', filename='login_styles.css') }}">
 {% endblock %}
 
@@ -33,7 +33,7 @@
         {{ form.submit(class="btn btn-primary btn-lg btn-block btn-no-border") }}
         </div>
       </form>
-      <p class="text--center">Not a member? <a href="/register">Register now</a> <svg class="icon">
+      <p class="text--center">Not a member? <a class="underlineable" href="/register">Register now</a> <svg class="icon">
         <use xlink:href="#icon-arrow-right"></use>
       </svg></p>
     </div>

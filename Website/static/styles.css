@@ -33,11 +33,6 @@ body {
   height: 100vh;
 }
 
-.register-btn {
-  position: absolute;
-  right: 15px;
-}
-
 .page-container {
   position: relative;
   min-height: 100vh;
@@ -59,7 +54,7 @@ a {
   text-decoration: none;
 }
 
-a:focus, a:hover {
+.underlineable:focus, .underlineable:hover {
   text-decoration: underline;
 }
 
