@@ -10,5 +10,7 @@
 {% endblock %}
 
 {% block content %}
-  <div class="text-center">Hej {% if not (current_user.is_authenticated) %} och välkommen till Computer Cube's officiella hemsida! {% else %} {{ current_user.username }}, och välkommen till Computer Cube's officiella hemsida! {% endif %}</div>
+  <div class="text-center">
+    <p>Hej {% if not (current_user.is_authenticated) %} och välkommen till Computer Cube's officiella hemsida! <a class="underlineable" href="/register">Registrera</a> ett konto eller <a class="underlineable" href="/login">Logga in!</a> {% else %} {{ current_user.username }}, och välkommen till Computer Cube's officiella hemsida! {% endif %}</p>
+  </div>
 {% endblock %}

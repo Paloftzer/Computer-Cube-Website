@@ -49,7 +49,7 @@ def login_page():
             flash(f"Successfully logged in as {attempted_user.username}", category="success")
             return redirect(url_for("home"))
         else:
-            flash("Login failed! Please try again!", category="danger")
+            flash("Incorrect username or password, please try again!", category="danger")
     return render_template("main/login.html", form=form)
 
 @app.route("/logout")
