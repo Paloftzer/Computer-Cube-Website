@@ -8,19 +8,19 @@ from Website.forms import RegisterForm, LoginForm
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("main/index.html")
 
 @app.route("/tjanster")
 def tjanster_page():
-    return render_template("tjänster.html")
+    return render_template("main/tjänster.html")
 
 @app.route("/omoss")
 def Om_oss_page():
-    return render_template("omoss.html")
+    return render_template("main/omoss.html")
 
 @app.route("/kontakt")
 def kontakt_page():
-    return render_template("kontakt.html")
+    return render_template("main/kontakt.html")
 
 @app.route("/register", methods=["GET", "POST"])
 def register_page():
@@ -37,7 +37,7 @@ def register_page():
     if form.errors != {}:
         for err_msg in form.errors.values():
             flash(f"There was an error creating user: {err_msg}", category="danger")
-    return render_template("register.html", form=form)
+    return render_template("main/register.html", form=form)
 
 @app.route("/login", methods=["GET", "POST"])
 def login_page():
@@ -50,7 +50,7 @@ def login_page():
             return redirect(url_for("home"))
         else:
             flash("Login failed! Please try again!", category="danger")
-    return render_template("login.html", form=form)
+    return render_template("main/login.html", form=form)
 
 @app.route("/logout")
 def logout_page():
