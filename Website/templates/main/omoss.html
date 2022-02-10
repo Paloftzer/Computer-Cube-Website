@@ -1,0 +1,28 @@
+{% extends "layouts/base.html" %}
+{% block nav_about %}active{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
+{% block title %}
+  Om Oss
+{% endblock %}
+
+{% block content %}
+  <img class="GroupImage" src="/static/group_photo.jpeg"> <!--Image is currently a placeholder, we need to take a proper group photo-->
+  <h1 class="AboutUsTitle">
+    Om oss på Computer Cube
+  </h1>
+  <div class="ui text container">
+    <p class="AboutUsText">Vi på Computer Cube jobbar för att alla kunder ska känna sig nöjda med deras produkter.<br><br>
+      Computer Cube skapades i april av år 2021, vi var då 4 elever på samma skola som fick i uppgift att skapa ett företag under UF.
+      Under det senaste året har vi gått från att vara ett företag bara skapat för att det var en uppgift i skolan till att vara ett företag som vi faktiskt bryr oss om.
+      Vi hoppas att vi kan fortsätta i den riktning vi går just nu och hoppas att Computer Cube eventuellt kan bli till ett riktigt företag som har en plats i vårat samhälle.
+      Tyvärr så har vi under våran tid förlorat en medlem i vårat team, men det kommer inte stoppa oss från att fortsätta, och vi kommer fortsätta jobba hårt så att vårat företag kan fortsätta existera.<br><br>
+      På Computer Cube har vi en del tjänster, vi erbjuder kurser där vem som helst kan lära sig hur en dator fungerar och hur man använder appar, program och tjänster som Microsoft Word och Google Mail (Gmail).
+      Vi säljer också färdiga datorer som vi har byggt och fixat, eller tjänsten att vi kan bygga en dator enligt dina krav. <br><br>
+      Allt detta erbjuder vi för vi tror på att alla ska ha möjligheten att ha en dator och kunna använda den vem man än är.
+    </p>
+  </div>
+{% endblock %}

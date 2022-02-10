@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>{% block title %}{% endblock %}</title>
+    {% include "partials/_head.html" %}
+    {# Use this block for adding custom head tags in other files #}
+    {% block custom_head_tags %}{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="page-container">
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2b303aff">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Computer Cube</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="home-btn">
+                <a class="nav-link {% block nav_home %}{% endblock %}" href="/">Hem</a>
+              </li>
+              <li class="services-btn">
+                <a class="nav-link {% block nav_services %}{% endblock %}" href="/tjanster">Tjänster</a>
+              </li>
+              <li class="about-btn">
+                <a class="nav-link {% block nav_about %}{% endblock %}" href="/omoss">Om Oss</a>
+              </li>
+              <li class="contact-btn">
+                <a class="nav-link {% block nav_contact %}{% endblock %}" href="/kontakt">Kontakta Oss</a>
+              </li>
+              <li class="register-btn">
+                <a class="nav-link {% block nav_register %}{% endblock %}" href="/register">Register</a>
+              </li>
+              <li class="login-btn">
+                <a class="nav-link {% block nav_login %}{% endblock %}" href="/login">Login</a>
+              </li>
+            </ul>
+            {% if current_user.is_authenticated %}
+            <a class="nav-link">Welcome {{ current_user.username }}</a>
+            <a class="nav-link">
+              <i class="fas fa-coins">Current budget: {{ current_user.budget }}$</i>
+            </a>
+
+            <a class="nav-link" href="{{ url_for('logout_page') }}">Logout</a>
+            {% else %}
+
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+      <div class="main_content-container">
+        {% include "partials/_flashes.html" %}
+          <div class="keepfooteratbottom">
+            {% block content %}
+            {% endblock %}
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        <footer class="text-center text-lg-start" style="background-color:#2b303aff">
+          <!-- Copyright -->
+          <div class="text-center p-3 text-light">
+            © 2021 Copyright:
+            <a class="text-light underlineable" href="http://127.0.0.1:5000/">computercube.se</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>
