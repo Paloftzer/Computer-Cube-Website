@@ -4,11 +4,41 @@
 {% block styles %}
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 {% endblock %}
+{% block custom_head_tags %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='contact_styles.css') }}">
+{% endblock %}
+
 
 {% block title %}
-  Computer Cube
+  Kontakta Oss
 {% endblock %}
 
 {% block content %}
-  <div class="text-center">Detta är Computer Cube's officiela hemsida!</div>
+  <div class="contact-container">
+    <div class="text-center">
+      <h2>Kontakta Oss</h2>
+      <p>Om du har ett problem eller behöver info kontakta oss med formuläret nedan</p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <img src="#" style="width:100%">
+      </div>
+      <div class="column">
+        <form action="/action_page.php">
+          <label for="fname">Förnamn</label>
+          <input type="text" id="fname" name="firstname" placeholder="Ditt förnamn">
+          <label for="lname">Efternamn</label>
+          <input type="text" id="lname" name="lastname" placeholder="Ditt efternamn">
+          <label for="subject">Ämne</label>
+          <textarea id="subject" name="subject" placeholder="Beskriv ditt ämne" style="height:170px"></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="icons">
+    <span class="material-icons-outlined mdo-dark mdo-36">mail</span>
+    <span class="material-icons-outlined mdo-dark mdo-36">location_on</span>
+    <span class="material-icons-outlined mdo-dark mdo-36">phone</span>
+  </div>
 {% endblock %}
