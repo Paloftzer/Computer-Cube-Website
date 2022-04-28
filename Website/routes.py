@@ -1,10 +1,12 @@
 from flask.helpers import flash
 from flask_login import login_user, logout_user
+from flask_mail import Message
 from Website import app
 from flask import render_template, redirect, url_for
 from Website import db
 from Website.models import User
-from Website.forms import RegisterForm, LoginForm
+from Website.forms import RegisterForm, LoginForm, SupportForm
+from Website import mail
 
 @app.route("/")
 def home():
@@ -18,9 +20,17 @@ def tjanster_page():
 def Om_oss_page():
     return render_template("main/omoss.html")
 
-@app.route("/kontakt")
+@app.route("/kontakt", methods=["GET", "POST"])
 def kontakt_page():
-    return render_template("main/kontakt.html")
+    supportform = SupportForm()
+    if supportform.validate_on_submit():
+        msg = Message(str(supportform.email_address.data), recipients = ["computercubeuf@gmail.com"])
+        msgbody = str(supportform.name.data) +"\n"+ str(supportform.subject.data)
+        msg.body = msgbody
+        mail.send(msg)
+        flash("Successfully sent message! Please wait for our response!")
+        return redirect(url_for("kontakt_page"))
+    return render_template("main/kontakt.html", supportform=supportform)
 
 @app.route("/register", methods=["GET", "POST"])
 def register_page():
