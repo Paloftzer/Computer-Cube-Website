@@ -79,7 +79,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 80px;
 }
 
 a {
@@ -94,7 +94,62 @@ a {
 
 
 /* Services page */
+.serviceimg1 {
+  width: 20vw; 
+  height: 15vw; 
+  float: left; 
+  margin-left: 3vw;
+}
 
+.servicep1 {
+  float: left; 
+  margin-left: 10px; 
+  margin-top: 5px; 
+  max-width: 25vw; 
+  text-align: left;
+}
+
+.serviceimg2 {
+  width: 20vw; 
+  height: 15vw; 
+  float: right; 
+  margin-right: 3vw;
+}
+
+.servicep2 {
+  float: right; 
+  margin-right: 10px; 
+  margin-top: 5px; 
+  max-width: 25vw; 
+  text-align: left;
+}
+
+.servicecard2 {
+  margin-top: 25vh;
+}
+
+.serviceimg3 {
+  width: 20vw; 
+  height: 15vw; 
+  float: left; 
+  margin-left: 3vw;
+}
+
+.servicep3 {
+  float: left; 
+  margin-left: 10px; 
+  margin-top: 5px; 
+  max-width: 25vw; 
+  text-align: left;
+}
+
+.servicecard3 {
+  margin-top: 50vh;
+}
+
+.service-container {
+  height: 100vh;
+}
 
 /* About us page */
 .GroupImage {
