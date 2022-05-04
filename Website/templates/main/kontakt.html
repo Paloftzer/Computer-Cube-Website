@@ -24,14 +24,15 @@
         <img src="#" style="width:100%">
       </div>
       <div class="column">
-        <form action="/action_page.php">
+        <form method="POST">
+          {{ supportform.hidden_tag() }}
           <label for="name">Namn</label>
-          <input type="text" id="name" name="name" placeholder="Ditt förnamn och efternamn">
+          {{ supportform.name(placeholder="Ditt förnamn och efternamn") }}
           <label for="email">Email</label>
-          <input type="text" id="email" name="email" placeholder="Din email address">
+          {{ supportform.email_address(placeholder="Din email address") }}
           <label for="subject">Ämne</label>
-          <textarea id="subject" name="subject" placeholder="Beskriv ditt ämne" style="height:170px"></textarea>
-          <input type="submit" value="Submit">
+          {{ supportform.subject(placeholder="Beskriv ditt ämne", style="height:170px") }}
+          {{ supportform.submit() }}
         </form>
       </div>
     </div>

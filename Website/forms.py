@@ -16,4 +16,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField(label="Login")
 
 class SupportForm(FlaskForm):
-    name = StringField(label="")
+    name = StringField(label="Namn", validators=[DataRequired()])
+    email_address = StringField(label="Email", validators=[Email(), DataRequired()])
+    subject = StringField(label="Ämne", validators=[Length(min=2, max=1024), DataRequired()])
+    submit = SubmitField(label="Skicka")
