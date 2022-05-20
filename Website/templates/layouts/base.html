@@ -66,7 +66,7 @@
           <div class="text-center p-3 text-light">
             © 2021 Copyright:
             <a class="text-light underlineable" href="http://127.0.0.1:5000/">computercube.se</a>
-            <marquee scrollamount="2">{% if not (current_user.is_authenticated) %}Hello, we have been trying to contact you about your computers extended warranty and a continued subscription on McAfee antivirus {% else %} Hello {{ current_user.username }}, we have been trying to contact you about your computers extended warranty and a continued subscription on McAfee antivirus {% endif %}</marquee>
+            <marquee scrollamount="2">{% if not (current_user.is_authenticated) %}Hello, we have been trying to contact you about your computers extended warranty and a continued subscription on <a href="https://www.mcafee.com/consumer/en-us/landing-page/retention/mymcafee_microsite/compare.html">McAfee</a> antivirus {% else %} Hello {{ current_user.username }}, we have been trying to contact you about your computers extended warranty and a continued subscription on <a href="https://www.mcafee.com/consumer/en-us/landing-page/retention/mymcafee_microsite/compare.html">McAfee</a> antivirus {% endif %}</marquee>
           </div>
           <!-- Copyright -->
         </footer>
