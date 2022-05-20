@@ -1,5 +1,5 @@
 from flask.helpers import flash
-from flask_login import login_user, logout_user
+from flask_login import current_user, login_user, logout_user
 from flask_mail import Message
 from Website import app
 from flask import render_template, redirect, url_for
@@ -28,7 +28,7 @@ def kontakt_page():
         msgbody = str(supportform.name.data) +"\n"+ str(supportform.subject.data)
         msg.body = msgbody
         mail.send(msg)
-        flash("Successfully sent message! Please wait for our response!")
+        flash("Successfully sent message! Please wait for our response!", category="alert")
         return redirect(url_for("kontakt_page"))
     return render_template("main/kontakt.html", supportform=supportform)
 
@@ -52,6 +52,9 @@ def register_page():
 @app.route("/login", methods=["GET", "POST"])
 def login_page():
     form = LoginForm()
+    if current_user.is_authenticated:
+        flash("You cannot log in while logged in!", category="danger")
+        return redirect(url_for("home"))
     if form.validate_on_submit():
         attempted_user = User.query.filter_by(username=form.username.data).first()
         if attempted_user and attempted_user.check_password_correction(attempted_password=form.password.data):
@@ -67,3 +70,7 @@ def logout_page():
     logout_user()
     flash("Logout successful!", category="info")
     return redirect(url_for("home"))
+
+@app.route("/account")
+def account_page():
+    return render_template("main/account.html")

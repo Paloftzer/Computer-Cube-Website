@@ -34,15 +34,11 @@
                 <a class="nav-link {% block nav_register %}{% endblock %}" href="/register">Register</a>
               </li>
               <li class="login-btn">
-                <a class="nav-link {% block nav_login %}{% endblock %}" href="/login">Login</a>
+                {% if not (current_user.is_authenticated) %} <a class="nav-link {% block nav_login %}{% endblock %}" href="/login">Login</a> {% else %} {% endif %}
               </li>
             </ul>
             {% if current_user.is_authenticated %}
-            <a class="nav-link">Welcome {{ current_user.username }}</a>
-            <a class="nav-link">
-              <i class="fas fa-coins">Current budget: {{ current_user.budget }}$</i>
-            </a>
-
+            <a class="nav-link" href="/account">Welcome {{ current_user.username }}</a>
             <a class="nav-link" href="{{ url_for('logout_page') }}">Logout</a>
             {% else %}
 
@@ -66,7 +62,7 @@
           <div class="text-center p-3 text-light">
             © 2021 Copyright:
             <a class="text-light underlineable" href="http://127.0.0.1:5000/">computercube.se</a>
-            <marquee scrollamount="2">{% if not (current_user.is_authenticated) %}Hello, we have been trying to contact you about your computers extended warranty and a continued subscription on McAfee antivirus {% else %} Hello {{ current_user.username }}, we have been trying to contact you about your computers extended warranty and a continued subscription on McAfee antivirus {% endif %}</marquee>
+            <marquee scrollamount="2">{% if not (current_user.is_authenticated) %}Hello, we have been trying to contact you about your computers extended warranty and a continued subscription on McAfee antivirus! {% else %} Hello {{ current_user.username }}, we have been trying to contact you about your computers extended warranty and a continued subscription on McAfee antivirus! {% endif %}</marquee>
           </div>
           <!-- Copyright -->
         </footer>

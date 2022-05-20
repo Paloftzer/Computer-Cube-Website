@@ -182,7 +182,9 @@ a {
 
 
 /* Login page */
-
+.form-color, .form-control:focus {
+  color: #eee;
+}
 
 /* All pages */
 input:focus::placeholder {
